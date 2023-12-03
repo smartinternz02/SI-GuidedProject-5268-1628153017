@@ -1,15 +1,24 @@
-package com.phani.Services;
+package com.phani.demo.Services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.phani.Entity.Book;
-import com.phani.repository.bookRepo;
+import com.phani.demo.Entity.Book;
+import com.phani.demo.repository.bookRepo;
 
 @Service
 public class bookServices {
-    bookRepo repo;
+    private bookRepo repo;
+
+    @Autowired
+    public bookServices(bookRepo repo){
+        this.repo=repo;
+    }
+    public bookServices(){
+        super();
+    }
     public void save(Book obj){
         this.repo.save(obj);
     }
