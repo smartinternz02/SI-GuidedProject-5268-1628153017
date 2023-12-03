@@ -1,4 +1,4 @@
-package com.phani.controller;
+package com.phani.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
