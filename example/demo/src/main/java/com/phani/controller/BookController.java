@@ -1,12 +1,16 @@
 package com.phani.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 
 import com.phani.demo.Entity.Book;
 import com.phani.demo.Entity.JsonResponse;
@@ -20,17 +24,12 @@ public class BookController {
     @Autowired
     bookRepo repo;
 
-    @Autowired
-    JsonResponse service;
-
-    @Bean
-    @PostMapping(value="/path")
-    public ResponseEntity<Object> save(@RequestBody Book book) {
-        //TODO: process POST request
-        
+    @RequestMapping(value ="/sum",method = RequestMethod.POST)
+    public ResponseEntity<Object> save(@RequestBody Book book) {        
         this.repo.save(book);
-        Response respose=new Response("null", 0);        
-        return service.reponseBuilder(respose, HttpStatus.OK);
+        Response response=new Response("null", 0);        
+        return JsonResponse.reponseBuilder(response, HttpStatus.OK);
     }
+   
     
 }
