@@ -4,5 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.phani.demo.Entity.Response;
 
-public interface responseRepo extends JpaRepository<Response,Integer>{ 
+
+public interface responseRepo extends JpaRepository<Response,String>{ 
 } 

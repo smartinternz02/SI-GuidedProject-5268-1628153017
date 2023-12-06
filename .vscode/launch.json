@@ -9,6 +9,16 @@
             "projectName": "demo",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-JobPortalApplication<JobPortal>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "in.co.job.portal.JobPortalApplication",
+            "projectName": "JobPortal",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
